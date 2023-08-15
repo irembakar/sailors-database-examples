@@ -1,8 +1,9 @@
 # Reading from existing database version
-from radb import *
+from radb import Connector
 
-# connection to the database
-db = literal_eval(Connector.connect())
+# connection to the database using the Connector class
+conn = Connector.connect("db_url")
+db = conn[0]
 
 # select * from sailors;
 q1 = db.sailors
